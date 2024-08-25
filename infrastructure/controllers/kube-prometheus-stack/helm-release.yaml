@@ -126,7 +126,7 @@ spec:
         additionalLabels:
           monitored-by: prometheus
       nodeSelector:
-        kubernetes.io/hostname: abaddon
+        kubernetes.io/hostname: minas-tirith-vm
     prometheus:
       enabled: true
       prometheusSpec:

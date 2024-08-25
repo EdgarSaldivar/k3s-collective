@@ -13,7 +13,7 @@ Collection of all of my kubernetes resources created for my k3s cluster, hosted 
 
 ```sh
 flux bootstrap github \
-  --owner=BriianPowell \
+  --owner=EdgarSaldivar \
   --repository=k3s-collective \
   --branch=main \
   --path=clusters/k3s \
@@ -143,4 +143,4 @@ kubectl apply -f basic-auth-sealed.yaml
 
 ## References
 
-All references I've used to create this project are listed as comments within each of their respective projects. In many cases I had to utilize several sources to create a working deployment file for my needs. If anyone has any questons or would like to reach out about the way I've done things, I'd be more than happy to talk about this project :grin:
+Heavily inspired by the degen https://github.com/BriianPowell

@@ -10,7 +10,7 @@ spec:
   entryPoints:
     - websecure
   routes:
-    - match: Host(`nextcloud.powell.place`)
+    - match: Host(`nextcloud.saldivar.io`)
       kind: Rule
       services:
         - name: nextcloud

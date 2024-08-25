@@ -10,7 +10,7 @@ spec:
   entryPoints:
     - websecure
   routes:
-    - match: Host(`wiki.powell.place`)
+    - match: Host(`wiki.saldivar.io`)
       kind: Rule
       services:
         - name: wiki-js

@@ -35,5 +35,13 @@ spec:
         namespace: cnpg-system
       version: ">=0.20.0 <1.0.0"
   values:
-    nodeSelector:
-      kubernetes.io/hostname: abaddon
+    affinity:
+      nodeAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          nodeSelectorTerms:
+            - matchExpressions:
+                - key: kubernetes.io/hostname
+                  operator: In
+                  values:
+                    - minas-tirith-vm
+                    - minas-tirith

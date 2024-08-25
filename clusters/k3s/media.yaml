@@ -15,3 +15,15 @@ spec:
     kind: GitRepository
     name: flux-system
   path: ./apps/media
+  template:
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: kubernetes.io/hostname
+                    operator: In
+                    values:
+                      - minas-tirith
+                      #- minas-tirith-vm

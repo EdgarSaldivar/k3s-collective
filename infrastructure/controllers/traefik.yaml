@@ -126,7 +126,7 @@ spec:
     tlsStore:
       default:
         defaultCertificate:
-          secretName: wildcard-powell-place
+          secretName: wildcard-terra-io
     resources:
       requests:
         cpu: 10m
