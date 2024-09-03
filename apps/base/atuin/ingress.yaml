@@ -10,7 +10,7 @@ spec:
   entryPoints:
     - websecure
   routes:
-    - match: Host(`atuin.powell.place`)
+    - match: Host(`atuin.saldivar.io`)
       kind: Rule
       services:
         - name: atuin

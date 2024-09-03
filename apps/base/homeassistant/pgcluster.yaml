@@ -57,7 +57,7 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   storageClassName: local-path
   local:
-    path: /mnt/moriyya/homeassistant
+    path: /storage/kubes/homeassistant
   nodeAffinity:
     required:
       nodeSelectorTerms:
@@ -65,4 +65,4 @@ spec:
             - key: kubernetes.io/hostname
               operator: In
               values:
-                - sheol
+                - pelargir

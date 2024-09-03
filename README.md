@@ -2,10 +2,10 @@
 
 Collection of all of my kubernetes resources created for my k3s cluster, hosted on a 2 nodes in my home office.
 
-| Name    | CPU      | GPU        |
-| ------- | -------- | ---------- |
-| Sheol   | i7-6700k | RTX-3080   |
-| Abaddon | i5-6600T | Integrated |
+| Name           | CPU            | GPU        |
+| -------------- | -------------- | ---------- |
+| Minas-Tirith   | Ryzen 9 5950X  | RTX-2080   |
+| Pelargir       | ARM Cortex-A72 | N/A        |
 
 ## FluxCD Installation
 

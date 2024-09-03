@@ -158,7 +158,7 @@ spec:
           imagePullPolicy: IfNotPresent
           env:
             - name: NEXTCLOUD_SERVER
-              value: https://nextcloud.powell.place
+              value: https://drive.saldivar.io
             - name: NEXTCLOUD_LISTEN_ADDRESS
               value: :9205
             - name: NEXTCLOUD_TIMEOUT
@@ -222,7 +222,7 @@ spec:
     name: nextcloud-pvc
     namespace: nextcloud
   local:
-    path: /mnt/moriyya/nextcloud
+    path: /storage2/nextcloud/nextcloud
   nodeAffinity:
     required:
       nodeSelectorTerms:

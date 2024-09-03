@@ -11,7 +11,7 @@ spec:
     - websecure
   routes:
     - kind: Rule
-      match: Host(`auth.powell.place`)
+      match: Host(`auth.saldivar.io`)
       middlewares:
         - name: traefik-forward-auth
           namespace: kube-system

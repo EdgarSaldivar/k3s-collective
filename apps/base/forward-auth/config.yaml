@@ -8,9 +8,9 @@ metadata:
     app.kubernetes.io/name: traefik-forward-auth
 data:
   INSECURE_COOKIE: 'false'
-  COOKIE_DOMAIN: powell.place
-  DOMAINS: powell.place
-  AUTH_HOST: auth.powell.place
+  COOKIE_DOMAIN: saldivar.io
+  DOMAINS: saldivar.io
+  AUTH_HOST: auth.saldivar.io
   URL_PATH: /_oauth
   DEFAULT_PROVIDER: oidc
-  PROVIDERS_OIDC_ISSUER_URL: https://keycloak.powell.place/realms/inferno
+  PROVIDERS_OIDC_ISSUER_URL: https://keycloak.saldivar.io/realms/inferno

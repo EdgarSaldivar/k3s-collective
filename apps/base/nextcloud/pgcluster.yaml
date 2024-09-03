@@ -57,7 +57,7 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   storageClassName: local-path
   local:
-    path: /mnt/moriyya/nextcloud-pg
+    path: /storage2/nextcloud/data
   nodeAffinity:
     required:
       nodeSelectorTerms:

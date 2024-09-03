@@ -10,7 +10,7 @@ spec:
   entryPoints:
     - websecure
   routes:
-    - match: Host(`ha.powell.place`)
+    - match: Host(`ha.saldivar.io`)
       kind: Rule
       services:
         - name: homeassistant

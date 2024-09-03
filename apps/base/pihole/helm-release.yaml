@@ -64,8 +64,18 @@ spec:
     #     - server=/boog.dmp/10.0.2.1
     persistentVolumeClaim:
       enabled: true
-    nodeSelector:
-      kubernetes.io/hostname: pelargirrr
+    affinity:
+      nodeAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          nodeSelectorTerms:
+            - matchExpressions:
+                - key: kubernetes.io/hostname
+                  operator: In
+                  values:
+                    - pelargir
+                    - pelargir-vm
+                    - minas-tirith
+                    - minas-tirith-vm
     extraEnvVars:
       TZ: America/Los_Angeles
     DNS1: '1.1.1.1'
