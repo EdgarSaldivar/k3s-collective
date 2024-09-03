@@ -10,7 +10,7 @@ spec:
   entryPoints:
     - websecure
   routes:
-    - match: Host(`alloy.powell.place`)
+    - match: Host(`alloy.saldivar.io`)
       kind: Rule
       services:
         - name: alloy

@@ -46,8 +46,15 @@ spec:
         app.kubernetes.io/name: radarr
     spec:
       restartPolicy: Always
-      nodeSelector:
-        kubernetes.io/hostname: sheol
+      nodeAffinity:
+        required:
+          nodeSelectorTerms:
+            - matchExpressions:
+                - key: kubernetes.io/hostname
+                  operator: In
+                  values:
+                    - minas-tirith
+                    - minas-tirith-vm
       containers:
         - name: radarr
           image: lscr.io/linuxserver/radarr:latest
@@ -119,7 +126,7 @@ spec:
     name: radarr-pvc
     namespace: media
   local:
-    path: /mnt/moriyya/media/radarr
+    path: /storage/media/radarr
   nodeAffinity:
     required:
       nodeSelectorTerms:
@@ -127,4 +134,5 @@ spec:
             - key: kubernetes.io/hostname
               operator: In
               values:
-                - sheol
+                - minas-tirith
+                - minas-tirith-vm

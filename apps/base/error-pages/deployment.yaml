@@ -38,8 +38,15 @@ spec:
         app.kubernetes.io/component: app
         app.kubernetes.io/name: error-pages
     spec:
-      nodeSelector:
-        kubernetes.io/hostname: abaddon
+      nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - minas-tirith
+                - minas-tirith-vm
       containers:
         - name: error-pages
           image: ghcr.io/tarampampam/error-pages:latest

@@ -174,4 +174,5 @@ spec:
             - key: kubernetes.io/hostname
               operator: In
               values:
-                - sheol
+                - minas-tirith
+                - minas-tirith-vm

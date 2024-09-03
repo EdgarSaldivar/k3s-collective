@@ -37,8 +37,15 @@ spec:
         app.kubernetes.io/component: app
         app.kubernetes.io/name: atuin
     spec:
-      nodeSelector:
-        kubernetes.io/hostname: abaddon
+      nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - minas-tirith
+                - minas-tirith-vm
       containers:
         - name: atuin
           image: ghcr.io/atuinsh/atuin:latest

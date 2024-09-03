@@ -106,7 +106,7 @@ spec:
     name: prowlarr-pvc
     namespace: media
   local:
-    path: /media/prowlarr
+    path: /storage/media/prowlarr
   nodeAffinity:
     required:
       nodeSelectorTerms:
@@ -114,4 +114,5 @@ spec:
             - key: kubernetes.io/hostname
               operator: In
               values:
-                - abaddon
+                - minas-tirith
+                - minas-tirith-vm

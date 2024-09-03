@@ -10,7 +10,7 @@ spec:
   entryPoints:
     - websecure
   routes:
-    - match: Host(`grafana.powell.place`)
+    - match: Host(`grafana.saldivar.io`)
       kind: Rule
       services:
         - name: grafana

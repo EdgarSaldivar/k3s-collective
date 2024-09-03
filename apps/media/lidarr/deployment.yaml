@@ -46,8 +46,16 @@ spec:
         app.kubernetes.io/name: lidarr
     spec:
       restartPolicy: Always
-      nodeSelector:
-        kubernetes.io/hostname: sheol
+      affinity:
+      nodeAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          nodeSelectorTerms:
+            - matchExpressions:
+                - key: kubernetes.io/hostname
+                  operator: In
+                  values:
+                    - minas-tirith
+                    - minas-tirith-vm
       containers:
         - name: lidarr
           image: lscr.io/linuxserver/lidarr:latest
@@ -119,7 +127,7 @@ spec:
     name: lidarr-pvc
     namespace: media
   local:
-    path: /mnt/moriyya/media/lidarr
+    path: /storage/media/lidarr
   nodeAffinity:
     required:
       nodeSelectorTerms:
@@ -127,4 +135,5 @@ spec:
             - key: kubernetes.io/hostname
               operator: In
               values:
-                - sheol
+                - minas-tirith
+                - minas-tirith-vm

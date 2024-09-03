@@ -10,7 +10,7 @@ spec:
   entryPoints:
     - websecure
   routes:
-    - match: Host(`prometheus.powell.place`)
+    - match: Host(`prometheus.saldivar.io`)
       kind: Rule
       services:
         - name: monitor-prometheus

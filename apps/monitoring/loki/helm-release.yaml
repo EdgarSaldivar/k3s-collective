@@ -72,22 +72,22 @@ spec:
     write:
       replicas: 0
       nodeSelector:
-        kubernetes.io/hostname: abaddon
+        kubernetes.io/hostname: minas-tirith
     tableManager:
       nodeSelector:
-        kubernetes.io/hostname: abaddon
+        kubernetes.io/hostname: minas-tirith
     read:
       replicas: 0
       nodeSelector:
-        kubernetes.io/hostname: abaddon
+        kubernetes.io/hostname: minas-tirith
     backend:
       replicas: 0
       nodeSelector:
-        kubernetes.io/hostname: abaddon
+        kubernetes.io/hostname: minas-tirith
     singleBinary:
       replicas: 1
       nodeSelector:
-        kubernetes.io/hostname: abaddon
+        kubernetes.io/hostname: minas-tirith
     gateway:
       enabled: true
       replicas: 1

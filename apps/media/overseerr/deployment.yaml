@@ -44,9 +44,17 @@ spec:
         app.kubernetes.io/component: app
         app.kubernetes.io/name: overseerr
     spec:
-      restartPolicy: Always
-      nodeSelector:
-        kubernetes.io/hostname: sheol
+    restartPolicy: Always
+    affinity:
+      nodeAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          nodeSelectorTerms:
+            - matchExpressions:
+                - key: kubernetes.io/hostname
+                  operator: In
+                  values:
+                    - minas-tirith
+                    - minas-tirith-vm
       containers:
         - name: overseerr
           image: sctx/overseerr:latest
@@ -104,7 +112,7 @@ spec:
     name: overseerr-pvc
     namespace: media
   local:
-    path: /mnt/moriyya/media/overseerr
+    path: /storage/media/overseerr
   nodeAffinity:
     required:
       nodeSelectorTerms:
@@ -112,4 +120,5 @@ spec:
             - key: kubernetes.io/hostname
               operator: In
               values:
-                - sheol
+                - minas-tirith
+                - minas-tirith-vm

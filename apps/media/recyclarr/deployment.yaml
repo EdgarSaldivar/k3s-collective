@@ -28,8 +28,15 @@ spec:
         app.kubernetes.io/name: recyclarr
     spec:
       restartPolicy: Always
-      nodeSelector:
-        kubernetes.io/hostname: abaddon
+      nodeAffinity:
+        required:
+          nodeSelectorTerms:
+            - matchExpressions:
+                - key: kubernetes.io/hostname
+                  operator: In
+                  values:
+                    - minas-tirith
+                    - minas-tirith-vm
       containers:
         - name: recyclarr
           image: ghcr.io/recyclarr/recyclarr:latest
@@ -104,7 +111,7 @@ spec:
     name: recyclarr-pvc
     namespace: media
   local:
-    path: /media/recyclarr
+    path: /storage/media/recyclarr
   nodeAffinity:
     required:
       nodeSelectorTerms:
@@ -112,4 +119,5 @@ spec:
             - key: kubernetes.io/hostname
               operator: In
               values:
-                - abaddon
+                - minas-tirith
+                - minas-tirith-vm

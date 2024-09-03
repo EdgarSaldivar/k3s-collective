@@ -45,8 +45,15 @@ spec:
         app.kubernetes.io/name: tautulli
     spec:
       restartPolicy: Always
-      nodeSelector:
-        kubernetes.io/hostname: abaddon
+      nodeAffinity:
+        required:
+          nodeSelectorTerms:
+            - matchExpressions:
+                - key: kubernetes.io/hostname
+                  operator: In
+                  values:
+                    - minas-tirith
+                    - minas-tirith-vm
       containers:
         - name: tautulli
           image: ghcr.io/tautulli/tautulli:latest
@@ -106,7 +113,7 @@ spec:
     name: tautulli-pvc
     namespace: media
   local:
-    path: /media/tautulli
+    path: /storage/media/tautulli
   nodeAffinity:
     required:
       nodeSelectorTerms:
@@ -114,4 +121,5 @@ spec:
             - key: kubernetes.io/hostname
               operator: In
               values:
-                - abaddon
+                - minas-tirith
+                - minas-tirith-vm

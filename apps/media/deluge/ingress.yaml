@@ -11,7 +11,7 @@ spec:
     - websecure
   routes:
     - kind: Rule
-      match: Host(`deluge.powell.place`)
+      match: Host(`deluge.saldivar.io`)
       middlewares:
         - name: security
           namespace: kube-system

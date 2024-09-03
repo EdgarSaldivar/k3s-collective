@@ -46,8 +46,16 @@ spec:
         app.kubernetes.io/name: bazarr
     spec:
       restartPolicy: Always
-      nodeSelector:
-        kubernetes.io/hostname: sheol
+      affinity:
+      nodeAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          nodeSelectorTerms:
+            - matchExpressions:
+                - key: kubernetes.io/hostname
+                  operator: In
+                  values:
+                    - minas-tirith
+                    - minas-tirith-vm
       containers:
         - name: bazarr
           image: lscr.io/linuxserver/bazarr:latest
@@ -124,4 +132,5 @@ spec:
             - key: kubernetes.io/hostname
               operator: In
               values:
-                - sheol
+                - minas-tirith
+                - minas-tirith-vm

@@ -10,7 +10,7 @@ spec:
   entryPoints:
     - websecure
   routes:
-    - match: Host(`alertmanager.terra-compute.com`)
+    - match: Host(`alertmanager.saldivar.io`)
       kind: Rule
       services:
         - name: alertmanager-operated

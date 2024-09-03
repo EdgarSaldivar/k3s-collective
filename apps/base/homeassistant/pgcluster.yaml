@@ -65,4 +65,7 @@ spec:
             - key: kubernetes.io/hostname
               operator: In
               values:
+                - minas-tirith
+                - minas-tirith-vm
                 - pelargir
+                - pelargir-vm

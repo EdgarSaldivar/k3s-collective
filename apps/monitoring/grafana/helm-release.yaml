@@ -52,8 +52,15 @@ spec:
     resources:
       cpu: 250m
       memory: 500Mi
-    nodeSelector:
-      kubernetes.io/hostname: abaddon
+    nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - minas-tirith
+                - minas-tirith-vm
     persistence:
       type: pvc
       enabled: true

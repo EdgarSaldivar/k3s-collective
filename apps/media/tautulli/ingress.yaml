@@ -11,7 +11,7 @@ spec:
     - websecure
   routes:
     - kind: Rule
-      match: Host(`tautulli.powell.place`)
+      match: Host(`tautulli.saldivar.io`)
       middlewares:
         - name: security
           namespace: kube-system

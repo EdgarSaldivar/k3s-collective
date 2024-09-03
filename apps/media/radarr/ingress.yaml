@@ -11,7 +11,7 @@ spec:
     - websecure
   routes:
     - kind: Rule
-      match: Host(`radarr.powell.place`)
+      match: Host(`radarr.saldivar.io`)
       middlewares:
         - name: security
           namespace: kube-system
