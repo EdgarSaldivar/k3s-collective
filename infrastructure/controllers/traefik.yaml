@@ -126,7 +126,7 @@ spec:
     tlsStore:
       default:
         defaultCertificate:
-          secretName: wildcard-terra-io
+          secretName: wildcard-saldivar-io
     resources:
       requests:
         cpu: 10m

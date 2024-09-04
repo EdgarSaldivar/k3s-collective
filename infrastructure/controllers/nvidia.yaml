@@ -67,3 +67,4 @@ spec:
                   operator: In
                   values:
                     - minas-tirith
+                    - minas-tirith-vm

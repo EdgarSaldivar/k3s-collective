@@ -57,8 +57,17 @@ spec:
         labels:
           app.kubernetes.io/component: app
           app.kuberenetes.io/name: reloader
-        nodeSelector:
-          kubernetes.io/hostname: abaddon
+        nodeAffinity:
+          required:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: kubernetes.io/hostname
+                    operator: In
+                    values:
+                      - minas-tirith
+                      - minas-tirith-vm
+                      - pelargir
+                      - pelargir-vm
       serviceAccount:
         labels:
           app.kubernetes.io/component: service-account

@@ -173,7 +173,10 @@ spec:
             - key: kubernetes.io/hostname
               operator: In
               values:
-                - sheol
+                - minas-tirith
+                - minas-tirith-vm
+                - pelargir
+                - pelargir-vm
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -221,3 +224,5 @@ spec:
               values:
                 - minas-tirith
                 - minas-tirith-vm
+                - pelargir
+                - pelargir-vm

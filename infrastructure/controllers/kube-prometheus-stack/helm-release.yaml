@@ -158,8 +158,17 @@ spec:
         #   matchLabels:
         #     scrape: prometheus-operator
         # scrapeConfigNamespaceSelector: {}
-        nodeSelector:
-          kubernetes.io/hostname: abaddon
+        nodeAffinity:
+          required:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: kubernetes.io/hostname
+                    operator: In
+                    values:
+                      - minas-tirith
+                      - minas-tirith-vm
+                      - pelargir
+                      - pelargir-vm
         resources:
           requests:
             cpu: 100m

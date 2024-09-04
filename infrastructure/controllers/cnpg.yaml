@@ -45,3 +45,5 @@ spec:
                   values:
                     - minas-tirith-vm
                     - minas-tirith
+                    - pelargir-vm
+                    - pelargir
