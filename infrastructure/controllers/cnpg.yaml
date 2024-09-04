@@ -34,16 +34,14 @@ spec:
         name: cloudnative-pg
         namespace: cnpg-system
       version: ">=0.20.0 <1.0.0"
-  values:
-    affinity:
-      nodeAffinity:
-        requiredDuringSchedulingIgnoredDuringExecution:
-          nodeSelectorTerms:
-            - matchExpressions:
-                - key: kubernetes.io/hostname
-                  operator: In
-                  values:
-                    - minas-tirith-vm
-                    - minas-tirith
-                    - pelargir-vm
-                    - pelargir
+  nodeAffinity:
+    requiredDuringSchedulingIgnoredDuringExecution:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - minas-tirith-vm
+                - minas-tirith
+                - pelargir-vm
+                - pelargir
