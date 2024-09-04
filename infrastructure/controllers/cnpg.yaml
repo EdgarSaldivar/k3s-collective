@@ -1,21 +1,3 @@
-#
-# Reference:
-# https://github.com/cloudnative-pg/charts
-# https://cloudnative-pg.io/documentation/1.19/
-#
-
-apiVersion: source.toolkit.fluxcd.io/v1
-kind: HelmRepository
-metadata:
-  name: cloudnative-pg
-  namespace: cnpg-system
-  labels:
-    app.kubernetes.io/component: helm-repository
-    app.kubernetes.io/name: cloudnative-pg
-spec:
-  interval: 24h
-  url: https://cloudnative-pg.github.io/charts
----
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
@@ -34,14 +16,15 @@ spec:
         name: cloudnative-pg
         namespace: cnpg-system
       version: ">=0.20.0 <1.0.0"
-  nodeAffinity:
-    requiredDuringSchedulingIgnoredDuringExecution:
-      nodeSelectorTerms:
-        - matchExpressions:
-            - key: kubernetes.io/hostname
-              operator: In
-              values:
-                - minas-tirith-vm
-                - minas-tirith
-                - pelargir-vm
-                - pelargir
+  values:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+          - matchExpressions:
+              - key: kubernetes.io/hostname
+                operator: In
+                values:
+                  - minas-tirith-vm
+                  - minas-tirith
+                  - pelargir-vm
+                  - pelargir
