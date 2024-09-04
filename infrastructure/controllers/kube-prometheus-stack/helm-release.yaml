@@ -167,8 +167,6 @@ spec:
                     values:
                       - minas-tirith
                       - minas-tirith-vm
-                      - pelargir
-                      - pelargir-vm
         resources:
           requests:
             cpu: 100m

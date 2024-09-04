@@ -53,11 +53,8 @@ spec:
     compatWithCPUManager: false
     allowDefaultNamespace: false
     runtimeClassName: nvidia
-    nodeSelector:
-      kubernetes.io/hostname: sheol
     gfd:
       enabled: false
-  values:
     affinity:
       nodeAffinity:
         requiredDuringSchedulingIgnoredDuringExecution:
